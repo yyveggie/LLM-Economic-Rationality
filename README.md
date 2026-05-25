@@ -24,7 +24,7 @@ python run.py --experiment smoke_test           # 冒烟测试
 python run.py --experiment baseline_quick --plots
 ```
 
-> ⚠️ `configs/models.yaml` 已加入 `.gitignore`，不会被 commit。
+> `configs/models.yaml` 已加入 `.gitignore`，不会被 commit。
 > 仓库里只追踪 `configs/models.example.yaml` 模板。
 
 ## 如何启动一个实验
@@ -47,25 +47,6 @@ python run.py
 ```bash
 python run.py --experiment smoke_test
 ```
-
-### 常用命令组合
-
-```bash
-# 跑 LLM + 算指标 + 出图（一键到底）
-python run.py --experiment baseline_quick --plots
-
-# 已经跑过 LLM 了，只重算指标和重画图
-python run.py --experiment baseline_quick --skip-llm --plots
-
-# 只跑 LLM，先攒数据，回头再分析
-python run.py --experiment baseline_quick --skip-analysis
-```
-
-### 跑前检查清单
-
-1. `pip install -r requirements.txt` 装好依赖
-2. `configs/models.yaml` 里的 `api_key` 已填
-3. 第一次先跑 `smoke_test` 确认能通，再上大实验
 
 ### 结果落在哪
 
@@ -96,20 +77,6 @@ python run.py --experiment paper_baseline --skip-llm --plots
 
 `results/<experiment>/data.csv` 是聚合后的总表，行带 `model` 字段，
 绘图脚本会按 `model` 分组画线/散点。
-
-## `configs/models.yaml` 字段
-
-| 字段 | 含义 |
-|------|------|
-| `provider` | `openai` / `anthropic` / `openai_compatible` |
-| `model` | 服务方使用的模型 ID |
-| `base_url` | OpenAI 兼容服务的入口 URL（官方 OpenAI/Anthropic 留空）|
-| `api_key` | 直接填字符串（本地无 key 服务填 `""`） |
-| `default_temperature` / `max_tokens` / `request_timeout` | 推理参数 |
-| `concurrency` | 并发请求数（按服务方限速调） |
-
-文件里以注释形式列了 OpenAI / Anthropic / DeepSeek / Qwen / Moonshot /
-GLM / 本地 vLLM 的速查模板，复制覆盖即可换模型。
 
 ## `configs/experiments.yaml` 内置实验
 
