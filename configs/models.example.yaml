@@ -1,0 +1,19 @@
+# =============================================================================
+# 当前要测试的 LLM。
+#
+# 字段说明：
+#   provider : openai | anthropic | openai_compatible
+#   model    : 服务方使用的模型 ID
+#   base_url : 仅 openai_compatible 必填；openai/anthropic 留空走官方
+#   api_key  : 直接填 API Key 字符串。本地无 key 服务（vLLM/Ollama）填 ""
+# =============================================================================
+
+provider: openai
+model: gpt-3.5-turbo
+base_url: ""
+api_key: "sk-..."
+
+default_temperature: 0.0
+max_tokens: 256
+request_timeout: 60
+concurrency: 8

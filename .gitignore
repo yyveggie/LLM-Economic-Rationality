@@ -1,0 +1,26 @@
+# Local secrets — copy configs/models.example.yaml to configs/models.yaml,
+# fill in your api_key, and let .gitignore keep it out of the repo.
+configs/models.yaml
+
+# Reference papers (kept locally, not redistributed)
+paper/
+
+# Experiment outputs
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/

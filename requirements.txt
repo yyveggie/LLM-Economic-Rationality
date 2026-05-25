@@ -1,0 +1,11 @@
+pyyaml>=6.0
+numpy>=1.24
+pandas>=2.0
+scipy>=1.11
+matplotlib>=3.7
+seaborn>=0.13
+tqdm>=4.66
+openai>=1.30
+anthropic>=0.34
+tenacity>=8.2
+networkx>=3.1
